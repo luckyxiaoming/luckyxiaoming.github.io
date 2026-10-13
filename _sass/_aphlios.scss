@@ -1,0 +1,311 @@
+/* Aphlios-inspired academic profile styling */
+
+:root {
+  --aphlios-background: #faf9f6;
+  --aphlios-surface: #ffffff;
+  --aphlios-primary: #233c33;
+  --aphlios-muted: #66736b;
+  --aphlios-accent: #356b52;
+  --aphlios-border: #e2e5dd;
+}
+
+html {
+  background: var(--aphlios-background);
+}
+
+body {
+  padding-top: 72px;
+  color: var(--aphlios-muted);
+  background: var(--aphlios-background);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--aphlios-primary);
+  font-family: Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+a {
+  color: var(--aphlios-accent);
+}
+
+.masthead {
+  height: 72px;
+  background: rgba(250, 249, 246, 0.96);
+  border-bottom: 1px solid var(--aphlios-border);
+  box-shadow: none;
+}
+
+.masthead__inner-wrap {
+  max-width: 1160px;
+  padding: 1.15em 2em;
+}
+
+.masthead__menu-item {
+  color: var(--aphlios-muted);
+  font-size: 0.82em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  &--lg {
+    color: var(--aphlios-primary);
+    font-family: Georgia, serif;
+    font-size: 1.05em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: var(--aphlios-accent);
+    }
+  }
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 76px;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 76px 2em 100px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 104px;
+  align-self: start;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+
+  .author__avatar {
+    width: 180px;
+    height: 180px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      object-fit: cover;
+    }
+  }
+
+  .author__content {
+    padding: 0;
+  }
+
+  .author__name {
+    margin: 20px 0 5px;
+    color: var(--aphlios-primary);
+    font-family: Georgia, serif;
+    font-size: 1.3em;
+    line-height: 1.25;
+  }
+
+  .author__bio {
+    margin: 0 0 20px;
+    color: var(--aphlios-muted);
+    font-size: 0.9em;
+    line-height: 1.55;
+  }
+
+  .author__urls {
+    a {
+      color: var(--aphlios-muted);
+      font-size: 0.88em;
+
+      &:hover {
+        color: var(--aphlios-accent);
+      }
+    }
+
+    .author__desktop {
+      color: var(--aphlios-muted);
+    }
+  }
+}
+
+.page {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.page__title {
+  margin: 0 0 2em;
+  color: var(--aphlios-accent);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.65em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.page__content {
+  max-width: 760px;
+
+  p, li {
+    color: var(--aphlios-muted);
+    font-size: 1em;
+  }
+
+  > p:first-of-type {
+    color: var(--aphlios-primary);
+    font-family: Georgia, serif;
+    font-size: clamp(1.5em, 3vw, 2.05em);
+    line-height: 1.35;
+  }
+
+  > p:nth-of-type(2) {
+    color: var(--aphlios-primary);
+    font-family: Georgia, serif;
+    font-size: clamp(1.05em, 1.8vw, 1.28em);
+    line-height: 1.6;
+  }
+
+  h2 {
+    margin-top: 3em;
+    padding: 0 0 0.45em;
+    border-bottom: 1px solid var(--aphlios-border);
+    color: var(--aphlios-primary);
+    font-size: 1.7em;
+  }
+
+  strong {
+    color: var(--aphlios-primary);
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(53, 107, 82, 0.35);
+
+    &:hover {
+      color: var(--aphlios-primary);
+      border-bottom-color: var(--aphlios-accent);
+    }
+  }
+
+  .education-list {
+    margin-top: 1.25em;
+  }
+
+  .education-item {
+    padding: 0 0 1.35em;
+
+    & + .education-item {
+      padding-top: 1.35em;
+      border-top: 1px solid var(--aphlios-border);
+    }
+  }
+
+  .education-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 1em;
+    align-items: baseline;
+    color: var(--aphlios-primary);
+  }
+
+  .education-location {
+    grid-column: 1;
+    color: var(--aphlios-muted);
+    font-size: 0.9em;
+  }
+
+  .education-date {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    color: var(--aphlios-muted);
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.78em;
+    white-space: nowrap;
+  }
+
+  .education-degree {
+    margin-top: 0.3em;
+    color: var(--aphlios-muted);
+    font-size: 0.95em;
+  }
+}
+
+.page__footer {
+  color: var(--aphlios-muted);
+  background: var(--aphlios-surface);
+  border-top: 1px solid var(--aphlios-border);
+}
+
+@media screen and (max-width: 925px) {
+  #main {
+    display: block;
+    padding: 48px 1.5em 80px;
+  }
+
+  .sidebar {
+    position: static;
+    margin-bottom: 56px;
+    text-align: center;
+
+    .author__avatar {
+      margin: 0 auto;
+    }
+
+    .author__urls {
+      display: block;
+      position: static;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+
+      li {
+        display: inline-block;
+        margin: 0 8px;
+      }
+    }
+  }
+
+  .page__content {
+    max-width: none;
+  }
+
+  .page__content .education-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .page__content .education-date {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 0.25em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .masthead__inner-wrap {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+
+  .page__content > p:first-of-type {
+    font-size: 1.45em;
+  }
+}
+
+.section-label {
+  margin: 0 0 1rem;
+  color: var(--aphlios-accent);
+  font-size: 0.35em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
